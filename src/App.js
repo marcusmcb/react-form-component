@@ -1,10 +1,10 @@
 import './App.css';
-import Formlist from './components/Formlist'
+import OrderedList from './components/OrderedList'
 
 const App = () => {
   return (
     <div className="App">      
-      <Formlist />
+      <OrderedList />
     </div>    
   );
 }

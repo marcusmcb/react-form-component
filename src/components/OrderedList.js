@@ -1,7 +1,7 @@
 import React from 'react'
-import './Formlist.css'
+import './OrderedList.css'
 
-const Formlist = () => {
+const OrderedList = () => {
     return (
         <div>
             <p className='form-list'>FORM LIST GOES HERE</p>
@@ -9,4 +9,4 @@ const Formlist = () => {
     )
 }
 
-export default Formlist
+export default OrderedList
