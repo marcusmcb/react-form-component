@@ -1,11 +1,11 @@
 import './App.css';
+import Formlist from './components/Formlist'
 
 const App = () => {
   return (
-    <div className="App">
-      <p>React Form Component</p>
-      <p>Marcus McBride | 2021</p>
-    </div>
+    <div className="App">      
+      <Formlist />
+    </div>    
   );
 }
 
