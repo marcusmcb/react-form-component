@@ -2,33 +2,40 @@ import React from 'react'
 import './OrderedList.css'
 
 const OrderedList = () => {
-  let orderedList = []
-  let orderedListItem = ''
 
-  const setListDisplay = (orderedListItem) => {
-    let listDisplay = document.getElementById('ordered-list-display')
-    let listElement = document.createElement('li')
-    listElement.appendChild(document.createTextNode(orderedListItem))
-    listDisplay.appendChild(listElement)
-  }
+  let inputList = []
+  let inputListItem = ''  
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      if (orderedListItem === '') {
+      if (inputListItem === '') {
         event.currentTargetValue = ''
       } else {
-        orderedList.push(orderedListItem)
-        console.log('ORDERED LIST: ', orderedList)
-        setListDisplay(orderedListItem)
-        orderedListItem = ''
+        inputList.push(inputListItem)
+        console.log(inputList)
+        setListDisplay(inputListItem)
+        inputListItem = ''
         event.currentTarget.value = ''
       }
     } else if (event.key === 'Backspace') {
-      orderedListItem = orderedListItem.slice(0, -1)
+      inputListItem = inputListItem.slice(0, -1)
     } else {
-      orderedListItem += event.key
-      console.log(orderedListItem)
+      inputListItem += event.key
     }
+  }
+
+  const setListDisplay = (inputListItem) => {
+    let listDisplay = document.getElementById('ordered-list-display')
+    let listElement = document.createElement('li')
+    listElement.appendChild(document.createTextNode(inputListItem))
+    listDisplay.appendChild(listElement)
+  }
+
+  const clearList = () => {
+    let listDisplay = document.getElementById('ordered-list-display')
+    listDisplay.innerHTML = '';
+    inputList = []
+    inputListItem = '' 
   }
 
   return (
@@ -43,7 +50,7 @@ const OrderedList = () => {
         <button type='button' className='input-row-element'>
           @
         </button>
-        <button type='button' className='input-row-element'>
+        <button type='button' className='input-row-element' onClick={clearList}>
           CL
         </button>
       </div>
