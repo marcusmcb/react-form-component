@@ -1,12 +1,69 @@
+ul {
+  list-style-type: none;
+}
+
 .input-row-element {
-    padding: 2px;
-    margin: 5px;
+  padding: 5px;
+  margin: 5px;
 }
 
 .input-row {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-ul {
-    list-style-type: none;
+#ordered-list-input {
+  width: 200px;
 }
+
+#ordered-list-display {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#clear-button,
+#sort-button {
+  color: white;
+  border: none;
+  width: 50px;
+}
+
+#sort-button {
+  background-color: green;
+}
+
+#clear-button {
+  background-color: red;
+}
+
+.fade-in-text {
+    animation: fadeIn linear 0.5s;
+    -webkit-animation: fadeIn linear 0.5s;
+    -moz-animation: fadeIn linear 0.5s;
+    -o-animation: fadeIn linear 0.5s;
+    -ms-animation: fadeIn linear 0.5s;
+  }
+  
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
