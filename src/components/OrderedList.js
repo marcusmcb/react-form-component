@@ -7,18 +7,19 @@ const OrderedList = () => {
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      console.log('WORKED')
-      orderedList.push(orderedListItem)
-      console.log("ORDERED LIST: ", orderedList)
-      orderedListItem = ''
-      event.currentTarget.value = ''
+      if (orderedListItem === '') {
+        event.currentTargetValue = ''
+      } else {
+        orderedList.push(orderedListItem)
+        console.log('ORDERED LIST: ', orderedList)
+        orderedListItem = ''
+        event.currentTarget.value = ''
+      }
     } else if (event.key === 'Backspace') {
-      console.log('BACKSPACE')
       orderedListItem = orderedListItem.slice(0, -1)
     } else {
       orderedListItem += event.key
-      console.log('Event', event.key)
-      console.log('OLI', orderedListItem)
+      console.log(orderedListItem)
     }
   }
 
@@ -37,6 +38,12 @@ const OrderedList = () => {
         <button type='button' className='input-row-element'>
           CL
         </button>
+      </div>
+      <div>
+        <p>List:</p>
+        {orderedList.map((item, i) => (
+          <ul key={i}>{item}</ul>
+        ))}
       </div>
     </div>
   )
