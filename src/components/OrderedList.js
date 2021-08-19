@@ -5,6 +5,13 @@ const OrderedList = () => {
   let orderedList = []
   let orderedListItem = ''
 
+  const setListDisplay = (orderedListItem) => {
+    let listDisplay = document.getElementById('ordered-list-display')
+    let listElement = document.createElement('li')
+    listElement.appendChild(document.createTextNode(orderedListItem))
+    listDisplay.appendChild(listElement)
+  }
+
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
       if (orderedListItem === '') {
@@ -12,6 +19,7 @@ const OrderedList = () => {
       } else {
         orderedList.push(orderedListItem)
         console.log('ORDERED LIST: ', orderedList)
+        setListDisplay(orderedListItem)
         orderedListItem = ''
         event.currentTarget.value = ''
       }
@@ -40,10 +48,7 @@ const OrderedList = () => {
         </button>
       </div>
       <div>
-        <p>List:</p>
-        {orderedList.map((item, i) => (
-          <ul key={i}>{item}</ul>
-        ))}
+        <ul id='ordered-list-display'></ul>
       </div>
     </div>
   )
