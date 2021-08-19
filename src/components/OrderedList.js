@@ -2,18 +2,17 @@ import React from 'react'
 import './OrderedList.css'
 
 const OrderedList = () => {
-  
   // vars to save user input
   let inputList = []
-  let inputListItem = ''  
+  let inputListItem = ''
 
   // function for input handler
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      if (inputListItem === '') {        
+      if (inputListItem === '') {
         return
       } else {
-        inputList.push(inputListItem)        
+        inputList.push(inputListItem)
         setListDisplay(inputListItem)
         inputListItem = ''
         event.currentTarget.value = ''
@@ -36,8 +35,14 @@ const OrderedList = () => {
 
   // function to sort list display
   const sortList = () => {
-    let sortToggle = document.getElementById('sort-button')    
-    let listDisplay, i, switching, b, shouldSwitch, dir, switchcount = 0
+    let sortToggle = document.getElementById('sort-button')
+    let listDisplay,
+      i,
+      switching,
+      b,
+      shouldSwitch,
+      dir,
+      switchcount = 0
     listDisplay = document.getElementById('ordered-list-display')
     switching = true
     dir = 'asc'
@@ -49,13 +54,13 @@ const OrderedList = () => {
         if (dir === 'asc') {
           if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
             shouldSwitch = true
-            sortToggle.innerHTML = "&#8595;"            
+            sortToggle.innerHTML = '&#8595;'
             break
           }
         } else if (dir === 'desc') {
           if (b[i].innerHTML.toLowerCase() < b[i + 1].innerHTML.toLowerCase()) {
             shouldSwitch = true
-            sortToggle.innerHTML = "&#8593;"            
+            sortToggle.innerHTML = '&#8593;'
             break
           }
         }
@@ -90,10 +95,20 @@ const OrderedList = () => {
           id='ordered-list-input'
           onKeyDown={handleKeyDown}
         ></input>
-        <button type='button' className='input-row-element' id='sort-button' onClick={sortList}>
+        <button
+          type='button'
+          className='input-row-element'
+          id='sort-button'
+          onClick={sortList}
+        >
           &#8595;
         </button>
-        <button type='button' className='input-row-element' id='clear-button' onClick={clearList}>
+        <button
+          type='button'
+          className='input-row-element'
+          id='clear-button'
+          onClick={clearList}
+        >
           bye
         </button>
       </div>
