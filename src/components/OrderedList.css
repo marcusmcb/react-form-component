@@ -11,6 +11,21 @@ ul {
   margin-top: 20px;
 }
 
+.component-title {
+  padding-top: 10px;
+  font-size: 24px;
+  background-color: rgb(15, 87, 81);
+  color: white;
+  padding-bottom: 10px;
+}
+
+.component-content {
+  background-color: rgb(78, 219, 208);
+  margin-left: 20vw;
+  margin-right: 20vw;
+  padding-bottom: 5vh;  
+}
+
 #ordered-list-input {
   width: 200px;
 }

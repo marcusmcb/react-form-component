@@ -87,18 +87,25 @@ const OrderedList = () => {
   }
 
   return (
-    <div>
+    <div className='component-content'>
+      <div>
+        <p className='component-title'>React List App</p>
+        <p>Type some text in the field below and press Enter to add it to the list.</p>
+        <p>The green button sorts the list and the red button clears it.</p>
+      </div>
       <div className='input-row'>
         <input
           type='text'
           className='input-row-element'
           id='ordered-list-input'
+          placeholder='Start typing...'          
           onKeyDown={handleKeyDown}
         ></input>
         <button
           type='button'
           className='input-row-element'
           id='sort-button'
+          aria-label="Sort that list!" data-balloon-pos="down"
           onClick={sortList}
         >
           &#8595;
@@ -107,6 +114,7 @@ const OrderedList = () => {
           type='button'
           className='input-row-element'
           id='clear-button'
+          aria-label="Sure you wanna do this?" data-balloon-pos="down"
           onClick={clearList}
         >
           bye
